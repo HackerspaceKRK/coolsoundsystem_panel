@@ -1,0 +1,3 @@
+[submodule "mqttui"]
+	path = mqttui
+	url = https://github.com/Teeed/mqttui
