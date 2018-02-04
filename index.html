@@ -10,13 +10,14 @@
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/mqttws31.min.js" type="text/javascript"></script>
 	<script src="mqttui/mqttui.js" type="text/javascript"></script>
+	<script src="js/mqttui-patch.js" type="text/javascript"></script>
 	<script src="js/coleci.js" type="text/javascript"></script>
 </head>
 
 <body>
 <div data-role="page" id="roomcontrolpage">
 	<div data-role="header">
-		<h1 id="name">Chlodny soundsystem - wszystkie</h1>
+		<h1 id="name">Chłodny soundsystem - wszystkie</h1>
 	</div><!-- /header -->
 	<div data-role="tabs">
 	        <div data-role="navbar">
@@ -34,8 +35,8 @@
 				<label for="gain-slider-softroom">Wzmocnienie:</label>
 				<input type="range" name="gain-slider-softroom" id="gain-slider-softroom" data-mqtt="mixer/softroom/gain" value="0" min="-23" max="3" step="0.01" data-highlight="true">
 		
-				<label for="mute-checkbox-softroom">Wycisz:</label>
-				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-softroom"  data-mqtt="mixer/softroom/mute" id="mute-checkbox-softroom">
+				<label for="mute-checkbox-softroom">Włącz/Wyłącz pomieszczenie:</label>
+				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-softroom"  data-mqtt="mixer/softroom/mute" id="mute-checkbox-softroom" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
 
 				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
 				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
@@ -52,8 +53,8 @@
 					<input type="radio" name="source-radio-softroom" id="source-radio-softroom-other" data-mqtt="mixer/softroom/source" value="other">
 					<label for="source-radio-softroom-other">Jack Softroom (wkrótce)</label>
 
-					<input disabled="" type="radio" name="source-radio-softroom" id="source-radio-softroom-projector" data-mqtt="mixer/softroom/source" value="magazynek">
-					<label for="source-radio-softroom-projector">Projektor (wkrótce)</label>
+					<input type="radio" name="source-radio-softroom" id="source-radio-softroom-magazynek" data-mqtt="mixer/softroom/source" value="magazynek">
+					<label for="source-radio-softroom-magazynek">Projektor (wkrótce)</label>
 				</fieldset>
 		</div>
                 <div id="el" class="ui-body-d ui-content">
@@ -62,8 +63,8 @@
 				<label for="gain-slider-softroom">Wzmocnienie:</label>
 				<input type="range" name="gain-slider-labelek" id="gain-slider-labelek" data-mqtt="mixer/labelek/gain" value="0" min="-15" max="15" step="0.01" data-highlight="true">
 	
-				<label for="mute-checkbox-labelek">Wycisz:</label>
-				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-labelek"  data-mqtt="mixer/labelek/mute" id="mute-checkbox-labelek">
+				<label for="mute-checkbox-labelek">Włącz/Wyłącz pomieszczenie:</label>
+				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-labelek"  data-mqtt="mixer/labelek/mute" id="mute-checkbox-labelek" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
 
 				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
 				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
@@ -87,8 +88,8 @@
 				<label for="gain-slider-hardroom">Wzmocnienie:</label>
 				<input type="range" name="gain-slider-hardroom" id="gain-slider-hardroom" data-mqtt="mixer/hardroom/gain" value="0" min="-30" max="5" step="0.01" data-highlight="true">
 	
-				<label for="mute-checkbox-hardroom">Wycisz:</label>
-				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-hardroom"  data-mqtt="mixer/hardroom/mute" id="mute-checkbox-hardroom">
+				<label for="mute-checkbox-hardroom">Włącz/Wyłącz pomieszczenie:</label>
+				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-hardroom"  data-mqtt="mixer/hardroom/mute" id="mute-checkbox-hardroom" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
 
 				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
 				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);">Wycisz</button>
@@ -111,8 +112,8 @@
 				<label for="gain-slider-magazynek">Wzmocnienie:</label>
 				<input type="range" name="gain-slider-magazynek" id="gain-slider-magazynek" data-mqtt="mixer/magazynek/gain" value="0" min="-30" max="5" step="0.01" data-highlight="true">
 	
-				<label for="mute-checkbox-magazynek">Wycisz:</label>
-				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-magazynek"  data-mqtt="mixer/magazynek/mute" id="mute-checkbox-magazynek">
+				<label for="mute-checkbox-magazynek">Włącz/Wyłącz pomieszczenie:</label>
+				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-magazynek" data-wrapper-class="custom-size-flipswitch" data-mqtt="mixer/magazynek/mute" id="mute-checkbox-magazynek" data-on-text="Gra" data-off-text="Nie gra">
 
 				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
 				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
