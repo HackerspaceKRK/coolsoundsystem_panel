@@ -57,14 +57,14 @@
                 <div id="el" class="ui-body-d ui-content">
 				<h1>Elektrolab</h1>
 
-				<label for="gain-slider-softroom">Wzmocnienie:</label>
+				<label for="gain-slider-labelek">Wzmocnienie:</label>
 				<input type="range" name="gain-slider-labelek" id="gain-slider-labelek" data-mqtt="mixer/labelek/gain" value="0" min="-25" max="0.5" step="0.01" data-highlight="true">
 	
 				<label for="mute-checkbox-labelek">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-labelek"  data-mqtt="mixer/labelek/mute" id="mute-checkbox-labelek" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
 
-				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
-				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
+				<label for="mute-others-labelek">Wycisz resztę pomieszczeń</label>
+				<button name="mute-others-labelek" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
 
 				<fieldset data-role="controlgroup">
 					<legend>Źródło dźwięku:</legend>
@@ -74,6 +74,9 @@
 				
 					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-chromecast" data-mqtt="mixer/labelek/source" value="chromecast">
 					<label for="source-radio-labelek-chromecast">Chromecast Audio</label>
+
+					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-softroom" data-mqtt="mixer/labelek/source" value="softroom">
+					<label for="source-radio-labelek-softroom">Projektor</label>
 
 					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-other" data-mqtt="mixer/labelek/source" value="other">
 					<label for="source-radio-labelek-other">Jack Elektrolab (wkrótce)</label>
@@ -88,8 +91,8 @@
 				<label for="mute-checkbox-hardroom">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-hardroom"  data-mqtt="mixer/hardroom/mute" id="mute-checkbox-hardroom" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
 
-				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
-				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);">Wycisz</button>
+				<label for="mute-others-hardroom">Wycisz resztę pomieszczeń</label>
+				<button name="mute-others-hardroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/magazynek/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/softroom/mute', '1', 1, false);">Wycisz</button>
 
 				<fieldset data-role="controlgroup">
 					<legend>Źródło dźwięku:</legend>
@@ -99,6 +102,9 @@
 				
 					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-chromecast" data-mqtt="mixer/hardroom/source" value="chromecast">
 					<label for="source-radio-hardroom-chromecast">Chromecast Audio</label>
+
+					<input type="radio" name="source-radio-softroom" id="source-radio-hardroom-softroom" data-mqtt="mixer/hardroom/source" value="softroom">
+					<label for="source-radio-hardroom-softroom">Projektor</label>
 
 					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-other" data-mqtt="mixer/hardroom/source" value="other">
 					<label for="source-radio-hardroom-other">Jack Hardroom (wkrótce)</label>
@@ -112,8 +118,8 @@
 				<label for="mute-checkbox-magazynek">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-magazynek" data-wrapper-class="custom-size-flipswitch" data-mqtt="mixer/magazynek/mute" id="mute-checkbox-magazynek" data-on-text="Gra" data-off-text="Nie gra">
 
-				<label for="mute-others-softroom">Wycisz resztę pomieszczeń</label>
-				<button name="mute-others-softroom" class="ui-btn ui-btn-inline" onclick="client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
+				<label for="mute-others-magazynek">Wycisz resztę pomieszczeń</label>
+				<button name="mute-others-magazynek" class="ui-btn ui-btn-inline" onclick="client.send('mixer/softroom/mute', '1', 1, false);client.send('mixer/labelek/mute', '1', 1, false);client.send('mixer/hardroom/mute', '1', 1, false);">Wycisz</button>
 
 				<fieldset data-role="controlgroup">
 					<legend>Źródło dźwięku:</legend>
@@ -123,6 +129,9 @@
 				
 					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-chromecast" data-mqtt="mixer/magazynek/source" value="chromecast">
 					<label for="source-radio-magazynek-chromecast">Chromecast Audio</label>
+
+					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-softroom" data-mqtt="mixer/magazynek/source" value="softroom">
+					<label for="source-radio-magazynek-softroom">Projektor</label>
 
 					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-other" data-mqtt="mixer/magazynek/source" value="other">
 					<label for="source-radio-magazynek-other">Jack Magazynek (wkrótce)</label>
