@@ -1,5 +1,10 @@
 // Create a client instance
-client = new Paho.MQTT.Client('10.12.4.11', 8083, 'kek/');
+var host = "rudy.at.hskrk.pl";
+var port = 8084;
+var username = "audiopanel";
+var password = "audiopanel"
+
+client = new Paho.MQTT.Client(host, port, 'kek/');
 client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
@@ -7,7 +12,7 @@ client.onMessageArrived = onMessageArrived;
 
 // connect the client
 client.connect({onSuccess:onConnect,
-                userName:'coleci', password:'coleci'});
+                userName:username, password:password, useSSL:true});
 console.log("attempting to connect...")
 
 function renderTrack(playingJSONPayload, statusJSONPayload) {
