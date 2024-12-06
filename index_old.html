@@ -34,7 +34,7 @@
                 <div id="sr" class="ui-body-d ui-content">
 				<h1>Softroom</h1>
 				<label for="gain-slider-softroom">Wzmocnienie:</label>
-				<input type="range" name="gain-slider-softroom" id="gain-slider-softroom" data-mqtt="mixer/softroom/gain" value="0" min="-10" max="10" step="0.01" data-highlight="true">
+				<input type="range" name="gain-slider-softroom" id="gain-slider-softroom" data-mqtt="mixer/softroom/gain" value="0" min="-27" max="-7" step="0.01" data-highlight="true">
 		
 				<label for="mute-checkbox-softroom">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-softroom"  data-mqtt="mixer/softroom/mute" id="mute-checkbox-softroom" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
@@ -51,15 +51,15 @@
 					<input type="radio" name="source-radio-softroom" id="source-radio-softroom-chromecast" data-mqtt="mixer/softroom/source" value="chromecast">
 					<label for="source-radio-softroom-chromecast">Chromecast Audio</label>
 
-					<input type="radio" name="source-radio-softroom" id="source-radio-softroom-softroom" data-mqtt="mixer/softroom/source" value="softroom">
-					<label for="source-radio-softroom-softroom">Projektor</label>
+					<input type="radio" name="source-radio-softroom" id="source-radio-softroom-projector" data-mqtt="mixer/softroom/source" value="projector">
+					<label for="source-radio-softroom-projector">Projektor</label>
 				</fieldset>
 		</div>
                 <div id="el" class="ui-body-d ui-content">
 				<h1>Elektrolab</h1>
 
 				<label for="gain-slider-labelek">Wzmocnienie:</label>
-				<input type="range" name="gain-slider-labelek" id="gain-slider-labelek" data-mqtt="mixer/labelek/gain" value="0" min="-10" max="10" step="0.01" data-highlight="true">
+				<input type="range" name="gain-slider-labelek" id="gain-slider-labelek" data-mqtt="mixer/labelek/gain" value="0" min="-25" max="0.5" step="0.01" data-highlight="true">
 	
 				<label for="mute-checkbox-labelek">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-labelek"  data-mqtt="mixer/labelek/mute" id="mute-checkbox-labelek" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
@@ -76,8 +76,8 @@
 					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-chromecast" data-mqtt="mixer/labelek/source" value="chromecast">
 					<label for="source-radio-labelek-chromecast">Chromecast Audio</label>
 
-					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-softroom" data-mqtt="mixer/labelek/source" value="softroom">
-					<label for="source-radio-labelek-softroom">Projektor</label>
+					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-projector" data-mqtt="mixer/labelek/source" value="projector">
+					<label for="source-radio-labelek-projector">Projektor</label>
 
 					<input type="radio" name="source-radio-labelek" id="source-radio-labelek-other" data-mqtt="mixer/labelek/source" value="other">
 					<label for="source-radio-labelek-other">Jack Elektrolab (wkrótce)</label>
@@ -87,7 +87,7 @@
                 <div id="hr" class="ui-body-d ui-content">
 				<h1>Hardroom</h1>
 				<label for="gain-slider-hardroom">Wzmocnienie:</label>
-				<input type="range" name="gain-slider-hardroom" id="gain-slider-hardroom" data-mqtt="mixer/hardroom/gain" value="0" min="-10" max="10" step="0.01" data-highlight="true">
+				<input type="range" name="gain-slider-hardroom" id="gain-slider-hardroom" data-mqtt="mixer/hardroom/gain" value="0" min="-30" max="-7" step="0.01" data-highlight="true">
 	
 				<label for="mute-checkbox-hardroom">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-hardroom"  data-mqtt="mixer/hardroom/mute" id="mute-checkbox-hardroom" data-on-text="Gra" data-off-text="Nie gra" data-wrapper-class="custom-size-flipswitch">
@@ -104,8 +104,8 @@
 					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-chromecast" data-mqtt="mixer/hardroom/source" value="chromecast">
 					<label for="source-radio-hardroom-chromecast">Chromecast Audio</label>
 
-					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-softroom" data-mqtt="mixer/hardroom/source" value="softroom">
-					<label for="source-radio-hardroom-softroom">Projektor</label>
+					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-projector" data-mqtt="mixer/hardroom/source" value="projector">
+					<label for="source-radio-hardroom-projector">Projektor</label>
 
 					<input type="radio" name="source-radio-hardroom" id="source-radio-hardroom-other" data-mqtt="mixer/hardroom/source" value="other">
 					<label for="source-radio-hardroom-other">Jack Hardroom (wkrótce)</label>
@@ -114,7 +114,7 @@
                 <div id="mg" class="ui-body-d ui-content">
 				<h1>Magazynek</h1>
 				<label for="gain-slider-magazynek">Wzmocnienie:</label>
-				<input type="range" name="gain-slider-magazynek" id="gain-slider-magazynek" data-mqtt="mixer/magazynek/gain" value="0" min="-10" max="10" step="0.01" data-highlight="true">
+				<input type="range" name="gain-slider-magazynek" id="gain-slider-magazynek" data-mqtt="mixer/magazynek/gain" value="0" min="-35" max="-6" step="0.01" data-highlight="true">
 	
 				<label for="mute-checkbox-magazynek">Włącz/Wyłącz pomieszczenie:</label>
 				<input type="checkbox" data-role="flipswitch" name="mute-checkbox-magazynek" data-wrapper-class="custom-size-flipswitch" data-mqtt="mixer/magazynek/mute" id="mute-checkbox-magazynek" data-on-text="Gra" data-off-text="Nie gra">
@@ -131,8 +131,8 @@
 					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-chromecast" data-mqtt="mixer/magazynek/source" value="chromecast">
 					<label for="source-radio-magazynek-chromecast">Chromecast Audio</label>
 
-					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-softroom" data-mqtt="mixer/magazynek/source" value="softroom">
-					<label for="source-radio-magazynek-softroom">Projektor</label>
+					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-projector" data-mqtt="mixer/magazynek/source" value="projector">
+					<label for="source-radio-magazynek-projector">Projektor</label>
 
 					<input type="radio" name="source-radio-magazynek" id="source-radio-magazynek-other" data-mqtt="mixer/magazynek/source" value="other">
 					<label for="source-radio-magazynek-other">Jack Magazynek (wkrótce)</label>
@@ -157,13 +157,6 @@
 		</div>
 		</div>
 		<div class="ui-content">
-                        <fieldset data-role="controlgroup">
-				<legend><h3>Chromecast Video</h3></legend>
-				<h4>Głośność</h4>
-				<label for="gain-slider-chromecast">Wzmocnienie:</label>
-				<input type="range" name="gain-slider-chromecastv" id="gain-slider-chromecastv" data-mqtt="video/chromecast/volume" value="0" min="0" max="100" step="0.01" data-highlight="true">
-                        </fieldset>
-
                         <fieldset data-role="controlgroup">
 				<legend><h3>Chromecast Audio</h3></legend>
 				<h4>Głośność</h4>

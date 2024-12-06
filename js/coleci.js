@@ -1,5 +1,5 @@
 // Create a client instance
-var host = "rudy.at.hskrk.pl";
+var host = "sound.at.hskrk.pl";
 var port = 8084;
 var username = "audiopanel";
 var password = "audiopanel"
